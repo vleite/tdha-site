@@ -1,0 +1,913 @@
+/* TDAH Site - Notion-inspired Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #ffffff;
+  color: #37352f;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.inter-font {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Layout Container - Notion-style centered layout */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Navigation - Clean and minimal like Notion */
+.navigation {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e9e9e7;
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.nav-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #37352f;
+  letter-spacing: -0.01em;
+}
+
+.nav-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e9e9e7;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.nav-dot.active {
+  background: #37352f;
+  transform: scale(1.2);
+}
+
+.nav-dot:hover {
+  background: #9b9a97;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Slide Container - Notion-style centered content */
+.slide-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Slide Header - Typography hierarchy like Notion */
+.slide-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.slide-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #37352f;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #37352f;
+  text-underline-offset: 8px;
+}
+
+.slide-subtitle {
+  font-size: 1.125rem;
+  color: #787774;
+  font-weight: 400;
+  line-height: 1.4;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Content Layout - Notion-style grid system */
+.slide-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.content-single {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Images - Responsive and well-contained */
+.slide-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Hand-drawn Cards - Notion-style with subtle shadows */
+.hand-drawn {
+  background: #ffffff;
+  border: 2px solid #37352f;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 12px 0;
+  position: relative;
+  box-shadow: 3px 3px 0px #37352f;
+  transform: rotate(-0.5deg);
+  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 100%;
+}
+
+.hand-drawn:nth-child(even) {
+  transform: rotate(0.5deg);
+}
+
+.hand-drawn:hover {
+  transform: rotate(0deg) translateY(-2px);
+  box-shadow: 4px 4px 0px #37352f;
+}
+
+.hand-drawn h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #37352f;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.hand-drawn p {
+  font-size: 1rem;
+  color: #787774;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.hand-drawn li {
+  font-size: 1rem;
+  color: #787774;
+  line-height: 1.5;
+  margin: 6px 0;
+}
+
+/* Lists - Clean Notion-style */
+.hand-drawn ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.hand-drawn li {
+  padding-left: 20px;
+  position: relative;
+}
+
+.hand-drawn li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-weight: 600;
+  color: #37352f;
+  font-size: 1.1rem;
+}
+
+/* Text Container - Flexible layout */
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Navigation Controls - Notion-style buttons */
+.nav-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  background: #ffffff;
+  border-top: 1px solid #e9e9e7;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.nav-button {
+  background: #ffffff;
+  border: 1px solid #e9e9e7;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  color: #37352f;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.nav-button:hover:not(:disabled) {
+  background: #f7f6f3;
+  border-color: #d3d1cb;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.slide-counter {
+  font-size: 0.875rem;
+  color: #9b9a97;
+  font-weight: 500;
+}
+
+/* Animations - Subtle and smooth */
+.animated-container {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-object {
+  position: absolute;
+  font-size: 1.25rem;
+  animation: float 4s ease-in-out infinite;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.object-1 { top: -30px; left: -25px; animation-delay: 0s; }
+.object-2 { top: -35px; right: -20px; animation-delay: 0.8s; }
+.object-3 { bottom: -25px; left: -30px; animation-delay: 1.6s; }
+.object-4 { bottom: -30px; right: -25px; animation-delay: 2.4s; }
+.object-5 { top: 50%; left: -40px; animation-delay: 3.2s; }
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+    opacity: 0.6; 
+  }
+  50% { 
+    transform: translateY(-8px) rotate(2deg); 
+    opacity: 1; 
+  }
+}
+
+/* CBD Highlight - Notion-style callout */
+.cbd-highlight {
+  background: #f0f9f0;
+  border: 1px solid #d4e6d4;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  border-left: 4px solid #4caf50;
+}
+
+.cbd-highlight h4 {
+  color: #2e7d32;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.cbd-highlight p {
+  color: #2e7d32;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* Intro Layout - Balanced and centered */
+.intro-content {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.intro-image {
+  flex: 0 0 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Clickable Elements - Notion-style interactions */
+.clickable-info {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.clickable-info:hover {
+  transform: rotate(0deg) translateY(-2px);
+  box-shadow: 4px 4px 0px #37352f;
+  background: #f7f6f3;
+}
+
+.click-hint {
+  position: absolute;
+  bottom: -8px;
+  right: 8px;
+  background: #37352f;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.clickable-info:hover .click-hint {
+  opacity: 1;
+}
+
+/* Mobile-specific clickable indicators */
+@media (max-width: 768px) {
+  .clickable-info {
+    position: relative;
+  }
+  
+  .clickable-info::after {
+    content: "👆 Toque para mais detalhes";
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    background: #2e7d32;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    opacity: 0.9;
+    pointer-events: none;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .clickable-info:active::after {
+    background: #1b5e20;
+    transform: scale(0.95);
+  }
+  
+  /* Hide desktop hover hint on mobile */
+  .click-hint {
+    display: none;
+  }
+  
+  /* Add subtle pulsing animation to draw attention */
+  .clickable-info::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid #2e7d32;
+    border-radius: 10px;
+    opacity: 0.3;
+    animation: pulse 2s infinite;
+    pointer-events: none;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.02);
+    }
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+  }
+}
+
+/* Modal - Notion-style overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+  animation: modalFadeIn 0.2s ease;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 12px;
+  max-width: 800px;
+  max-height: 90vh;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+  animation: modalSlideIn 0.3s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #e9e9e7;
+  background: #f7f6f3;
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #37352f;
+  margin: 0;
+}
+
+.modal-close {
+  background: #ffffff;
+  border: 1px solid #e9e9e7;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #9b9a97;
+}
+
+.modal-close:hover {
+  background: #f7f6f3;
+  color: #37352f;
+}
+
+.modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  max-height: calc(90vh - 100px);
+}
+
+.modal-body h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #37352f;
+  margin: 20px 0 12px 0;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-underline-offset: 4px;
+}
+
+.modal-body h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #37352f;
+  margin: 16px 0 8px 0;
+}
+
+.modal-body p {
+  font-size: 1rem;
+  color: #787774;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+.modal-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 12px 0;
+}
+
+.modal-body li {
+  font-size: 1rem;
+  color: #787774;
+  line-height: 1.6;
+  margin: 6px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.modal-body li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-weight: 600;
+  color: #37352f;
+}
+
+.modal-body strong {
+  color: #37352f;
+  font-weight: 600;
+}
+
+.modal-sources {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e9e9e7;
+}
+
+.modal-sources h4 {
+  color: #2e7d32;
+  font-size: 1.125rem;
+  margin-bottom: 12px;
+}
+
+.modal-sources ul {
+  background: #f7f6f3;
+  border: 1px solid #e9e9e7;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.modal-sources li {
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.875rem;
+  color: #787774;
+  margin: 8px 0;
+  padding-left: 0;
+}
+
+.modal-sources li:before {
+  display: none;
+}
+
+/* Animations */
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideIn {
+  from { 
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design - Mobile First Approach */
+@media (max-width: 768px) {
+  .slide-container {
+    padding: 24px 16px;
+    min-height: calc(100vh - 100px);
+  }
+  
+  .slide-title {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+  
+  .slide-subtitle {
+    font-size: 1rem;
+  }
+  
+  .slide-header {
+    margin-bottom: 32px;
+  }
+  
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .intro-content {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+  
+  .intro-image {
+    flex: none;
+    order: 2;
+  }
+  
+  .intro-text {
+    order: 1;
+  }
+  
+  .slide-image {
+    max-height: 300px;
+  }
+  
+  .hand-drawn {
+    padding: 16px;
+    margin: 8px 0;
+  }
+  
+  .hand-drawn h3 {
+    font-size: 1.125rem;
+  }
+  
+  .hand-drawn p, .hand-drawn li {
+    font-size: 0.875rem;
+  }
+  
+  .nav-content {
+    padding: 0 16px;
+  }
+  
+  .nav-title {
+    font-size: 1rem;
+  }
+  
+  .nav-controls {
+    padding: 16px;
+  }
+  
+  .nav-button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .slide-counter {
+    font-size: 0.8rem;
+  }
+  
+  .modal-overlay {
+    padding: 16px;
+  }
+  
+  .modal-header {
+    padding: 16px;
+  }
+  
+  .modal-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .modal-body {
+    padding: 16px;
+  }
+  
+  .modal-body h3 {
+    font-size: 1.125rem;
+  }
+  
+  .modal-body h4 {
+    font-size: 1rem;
+  }
+  
+  .modal-body p, .modal-body li {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-container {
+    padding: 16px 12px;
+  }
+  
+  .slide-title {
+    font-size: 1.75rem;
+  }
+  
+  .slide-subtitle {
+    font-size: 0.875rem;
+  }
+  
+  .hand-drawn {
+    padding: 12px;
+  }
+  
+  .hand-drawn h3 {
+    font-size: 1rem;
+  }
+  
+  .hand-drawn p, .hand-drawn li {
+    font-size: 0.8rem;
+  }
+  
+  .nav-button {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+  
+  .animated-object {
+    font-size: 1rem;
+  }
+  
+  .object-1 { top: -20px; left: -15px; }
+  .object-2 { top: -25px; right: -10px; }
+  .object-3 { bottom: -15px; left: -20px; }
+  .object-4 { bottom: -20px; right: -15px; }
+  .object-5 { top: 50%; left: -25px; }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .slide-image {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .slide-container {
+    padding: 16px;
+    min-height: calc(100vh - 80px);
+  }
+  
+  .slide-header {
+    margin-bottom: 16px;
+  }
+  
+  .slide-title {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  
+  .slide-subtitle {
+    font-size: 0.875rem;
+  }
+  
+  .slide-image {
+    max-height: 200px;
+  }
+  
+  .hand-drawn {
+    padding: 8px 12px;
+    margin: 4px 0;
+  }
+  
+  .hand-drawn h3 {
+    font-size: 0.875rem;
+    margin-bottom: 4px;
+  }
+  
+  .hand-drawn p, .hand-drawn li {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .navigation,
+  .nav-controls,
+  .animated-object,
+  .click-hint {
+    display: none;
+  }
+  
+  .slide-container {
+    padding: 20px;
+    page-break-inside: avoid;
+  }
+  
+  .hand-drawn {
+    border: 1px solid #000;
+    box-shadow: none;
+    transform: none;
+    page-break-inside: avoid;
+  }
+}
+
+
+/* Source Links - Clickable references */
+.source-link {
+  color: #2e7d32;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.source-link:hover {
+  color: #1b5e20;
+  border-bottom-color: #2e7d32;
+  text-decoration: none;
+}
+
+.source-link:visited {
+  color: #4a148c;
+}
+
+.source-link:visited:hover {
+  color: #6a1b9a;
+  border-bottom-color: #4a148c;
+}
+
+/* Touch improvements for mobile swipe */
+.main-content {
+  touch-action: pan-y pinch-zoom;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Re-enable text selection for modal content */
+.modal-body {
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
